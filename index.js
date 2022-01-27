@@ -7,11 +7,17 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  const trimmedProp = Object.assign({}, obj);
-  for (const prop in trimmedProp)
-    trimmedProp[prop] = trimmedProp[prop].trim();
-    console.log(trimmedProp)
-  return trimmedProp;
+  const result = {};
+  for (let prop in obj) {
+    result[prop] = obj[prop].trim();
+  }
+  return result;
+
+  // const trimmedProp = Object.assign({}, obj);
+  // for (const prop in trimmedProp)
+  //   trimmedProp[prop] = trimmedProp[prop].trim();
+  //   console.log(trimmedProp)
+  // return trimmedProp;
 
 }
 // trimProperties({username: '   vern    ', role: '  oh shit   '})
@@ -25,7 +31,10 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  for (let prop in obj) {
+    obj[prop] = obj[prop].trim();
+  }
+  return obj;
 }
 
 /**
