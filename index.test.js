@@ -1,4 +1,5 @@
 const utils = require('./index')
+const {findLargestInteger} = require("./index");
 
 describe('[Exercise 1] trimProperties', () => {
   test('[1] returns an object with the properties trimmed', () => {
@@ -32,7 +33,11 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    const input = [{ integer: 1 }, { integer: 3 }, { integer: 2 }];
+    const actual = utils.findLargestInteger(input);
+    expect(actual).toBe(3);
+  })
 })
 
 describe('[Exercise 4] Counter', () => {
