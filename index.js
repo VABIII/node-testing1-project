@@ -78,10 +78,11 @@ class Counter {
    * counter.countDown() // returns 0
    */
   countDown() {
-    if(this.count > 0) {
-      return this.count--
-    }
-    return this.count
+    return  this.count > 0 ? this.count-- : 0;
+  //   if(this.count > 0) {
+  //     return this.count--
+  //   }
+  //   return this.count
   }
 }
 
