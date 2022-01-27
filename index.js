@@ -7,8 +7,14 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  const trimmedProp = Object.assign({}, obj);
+  for (const prop in trimmedProp)
+    trimmedProp[prop] = trimmedProp[prop].trim();
+    console.log(trimmedProp)
+  return trimmedProp;
+
 }
+// trimProperties({username: '   vern    ', role: '  oh shit   '})
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
